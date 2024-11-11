@@ -1,5 +1,7 @@
+import time
+
 # Запрашиваем у пользователя количество овец
-num_sheep = int(input("Введите количество овец: "))
+num_sheep = int(input("Введите количество овец, которые перепрыгнут за забор: "))
 
 def sheep_plural(n):
     if n % 10 == 1 and n % 100 != 11:
@@ -9,8 +11,9 @@ def sheep_plural(n):
     else:
         return "овец"
 
-# Считаем овец
 for i in range(1, num_sheep + 1):
     print(f"{i} {sheep_plural(i)} за забором")
+    time.sleep(1)  # Пауза в 1 секунду после каждой фразы
+
 
 print("Все овцы посчитаны!")
